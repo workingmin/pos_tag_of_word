@@ -60,8 +60,9 @@ if __name__ == '__main__':
         new_tags.append(tag)
 
     if outfile is not None:
-        with open(outfile, 'w') as f:
+        with open(outfile, 'a') as f:
             writer = csv.writer(f)
             writer.writerows(new_tags)
     else:
-        print(new_tags)
+        for new_tag in new_tags:
+            print(new_tag)
